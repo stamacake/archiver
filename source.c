@@ -8,8 +8,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-char *cat(char *path, const char *fname)
-{
+char *cat(char *path, const char *fname){
 	int length = strlen(path) + strlen(fname) + 1;
 	char *buf = calloc(length + 1, 1);
 	// chech + write
@@ -17,8 +16,7 @@ char *cat(char *path, const char *fname)
 	return buf;
 }
 
-void arch(char *root, char *path, int fin_dir)
-{
+void arch(char *root, char *path, int fin_dir){
 	DIR *dir;
 
 	dir = opendir(path);
@@ -70,8 +68,7 @@ void arch(char *root, char *path, int fin_dir)
 	closedir(dir);
 }
 
-void make_dirs(char *dir, mode_t mode)
-{
+void make_dirs(char *dir, mode_t mode){
 	size_t len = strlen(dir);
 	char *dir_temp = calloc(len + 1, 1);
 
@@ -87,8 +84,7 @@ void make_dirs(char *dir, mode_t mode)
 	free(dir_temp);
 }
 
-int create_path(char *path, mode_t mode)
-{
+int create_path(char *path, mode_t mode){
 	char *dir = calloc(strlen(path) + 1, 1);
 
 	strcpy(dir, path);
@@ -129,8 +125,7 @@ void show_help(){
 	puts("-up, -unpack from_root where_root \n");	
 }
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]){
 	
 	
 	// a.out // command // from // where
