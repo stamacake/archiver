@@ -32,7 +32,6 @@ void arch(char *root, char *path, int fin_dir)
   //                               by all file system types */
   // char           d_name[256]; /* filename */
  //	};
-	*/
 
 	while (entry = readdir(dir)) {
 		
@@ -152,6 +151,8 @@ int main(int argc, char *argv[])
 
 			unpack(argv[3], fin_dir);
 			close(fin_dir);
+		} else {
+			show_help();
 		}
 	}
 	return 0;
