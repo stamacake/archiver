@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
+
 char *cat(char *path, const char *fname){
 	int length = strlen(path) + strlen(fname) + 1;
 	char *buf = calloc(length + 1, 1);
@@ -84,6 +85,7 @@ void make_dirs(char *dir, mode_t mode){
 	free(dir_temp);
 }
 
+
 int create_path(char *path, mode_t mode){
 	char *dir = calloc(strlen(path) + 1, 1);
 
@@ -126,7 +128,6 @@ void show_help(){
 }
 
 int main(int argc, char *argv[]){
-	
 	
 	// a.out // command // from // where
 	if (argc != 4) {
